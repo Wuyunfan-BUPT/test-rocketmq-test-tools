@@ -38,5 +38,5 @@ jobs:
         run: |
           ls
           echo "${GITHUB_REPOSITORY#*/} | sed -e "s/\//-/g" | cut -c1-36 | tr '[A-Z]' '[a-z]'"
-          sh ./entry1.sh
+          sh entry1.sh
           
