@@ -36,7 +36,7 @@ jobs:
           submodules: true
       - name: run entry1.sh
         run: |
-          cd test-rocketmq-test-tools
+          cd Wuyunfan-BUPT/test-rocketmq-test-tools
           echo "${GITHUB_REPOSITORY#*/} | sed -e "s/\//-/g" | cut -c1-36 | tr '[A-Z]' '[a-z]'"
           sh ./entry1.sh
           
