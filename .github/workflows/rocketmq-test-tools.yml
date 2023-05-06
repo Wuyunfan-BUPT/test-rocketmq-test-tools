@@ -24,9 +24,9 @@ jobs:
     timeout-minutes: 30
     steps:
       - name: print current diectory
-        run: ls ./
+        run: ls -l | echo
       - name: print GITHUB_REPOSITORY
-        run: echo "${GITHUB_REPOSITORY#*/} | sed -e "s/\//-/g" | cut -c1-36 | tr '[A-Z]' '[a-z]'"
+        run: echo "`${GITHUB_REPOSITORY#*/} | sed -e "s/\//-/g" | cut -c1-36 | tr '[A-Z]' '[a-z]'`"
       - name: print GITHUB_WORKFLOW
         run: echo "${GITHUB_WORKFLOW}"
       - name: print GITHUB_RUN_ID
@@ -34,4 +34,4 @@ jobs:
       - name: print home
         run: echo "${HOME}"
       - name: execute scripts
-        run: ./entry1.sh
+        run: /home/runner/test-rocketmq-test-tools/entry1.sh
