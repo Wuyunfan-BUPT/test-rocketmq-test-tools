@@ -1,6 +1,6 @@
 name: TEST_ROCKETMQ_TEST_TOOL
 
-on: [push]
+on: [push] 
 
 env:
   ACTION: deploy
