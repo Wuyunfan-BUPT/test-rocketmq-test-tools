@@ -37,8 +37,6 @@ jobs:
       - name: run entry1.sh
         run: |
           ls
-          cd test-rocketmq-test-tools/
-          ls -l
           echo "${GITHUB_REPOSITORY#*/} | sed -e "s/\//-/g" | cut -c1-36 | tr '[A-Z]' '[a-z]'"
           sh ./entry1.sh
           
