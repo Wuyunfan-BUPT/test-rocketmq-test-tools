@@ -23,8 +23,6 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
-      - name: print current diectory
-        run: echo ${pwd}
       - name: print GITHUB_REPOSITORY
         run: echo "${GITHUB_REPOSITORY#*/} | sed -e "s/\//-/g" | cut -c1-36 | tr '[A-Z]' '[a-z]'"
       - name: print GITHUB_WORKFLOW
@@ -33,5 +31,12 @@ jobs:
         run: echo "${GITHUB_RUN_ID}"
       - name: print home
         run: echo "${HOME}"
-      - name: execute scripts
-        run: /home/runner/test-rocketmq-test-tools/entry1.sh
+      - uses: actions/checkout@v3
+        with:
+          submodules: true
+      - name: run entry1.sh
+        run: |
+          cd test-rocketmq-test-tools
+          echo "${GITHUB_REPOSITORY#*/} | sed -e "s/\//-/g" | cut -c1-36 | tr '[A-Z]' '[a-z]'"
+          sh ./entry1.sh
+          
